@@ -4,10 +4,9 @@
 	<title>Cadastro de livro</title>
 </head>
 <body>
-    <form action="#" th:action="@{/cadastro}" method=post th:object="${livro}">
+    <form action="#" th:action="@{/cadastrar}" method=post th:object="${livro}">
     	Nome: <input type="text" th:field="*{nome}"><br>
-    	Categoria: <input type="text" th:field="*{categoria}">
+    	CPF: <input type="text" th:field="*{categoria}">
     	<input type="submit" value="Cadastrar">
     </form>
 </body>
-</html>
