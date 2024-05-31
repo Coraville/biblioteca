@@ -1,22 +1,22 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista Clientes</title>
+    <title>Lista Livros</title>
 </head>
 <body>
     <table>
     	<thead>
         	<tr>
             	<td><b>ID</b></td>
-            	<td><b>NOME</b> </td>
-            	<td><b>CPF</b> </td>
+            	<td><b>NOME DO LIVRO</b> </td>
+            	<td><b>CATEGORIA</b> </td>
         	</tr>
     	</thead>
     	<tbody>
-        	<tr th:each="cli : ${lista}">
-            	<td th:text="${cli.id}"></td>
-            	<td th:text="${cli.nome}"></td>
-            	<td th:text="${cli.cpf}"></td>
+        	<tr th:each="liv : ${lista}">
+            	<td th:text="${liv.id}"></td>
+            	<td th:text="${liv.nome}"></td>
+            	<td th:text="${liv.categoria}"></td>
        		</tr>
      	</tbody>
     </table>

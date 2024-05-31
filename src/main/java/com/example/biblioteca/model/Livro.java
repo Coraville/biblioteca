@@ -1,24 +1,24 @@
 package com.example.biblioteca.model;
 
-public class Cliente {
+public class Livro {
     
     private int id;
-    private String nome, cpf;
+    private String nome, categoria;
 
     //Sobrecarga de construtores
-    public Cliente(){
+    public Livro(){
 
     }
 
-    public Cliente(String nome, String cpf){
+    public Livro(String nome, String categoria){
         this.nome = nome;
-        this.cpf = cpf;
+        this.categoria = categoria;
     }
 
-    public Cliente(int id, String nome, String cpf){
+    public Livro(int id, String nome, String categoria){
         this.id = id;
         this.nome = nome;
-        this.cpf = cpf;
+        this.categoria = categoria;
     }
 
     public void setId(int id){
@@ -29,16 +29,16 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public void setCpf(String cpf){
-        this.cpf = cpf;
+    public void setCategoria(String categoria){
+        this.categoria = categoria;
     }
 
     public int getId(){
         return id;
     }
 
-    public String getCpf(){
-        return cpf;
+    public String getCategoria(){
+        return categoria;
     }
 
     public String getNome(){

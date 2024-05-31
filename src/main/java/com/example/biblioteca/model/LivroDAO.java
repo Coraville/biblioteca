@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 import jakarta.annotation.PostConstruct;
 
 @Repository
-public class ClienteDAO {
+public class LivroDAO {
     @Autowired DataSource dataSource;
 	
 	JdbcTemplate jdbc;
@@ -22,21 +22,20 @@ public class ClienteDAO {
 		jdbc = new JdbcTemplate(dataSource);
 	}
 
-    public void inserirCliente(Cliente cli){
-        String sql = "INSERT INTO cliente(nome,cpf)" +
+    public void inserirLivro(Livro liv){
+        String sql = "INSERT INTO livro(nome,categoria)" +
         " VALUES (?,?)";
         Object[] obj = new Object[2];
         //primeiro ?
-        obj[0] = cli.getNome();
+        obj[0] = liv.getNome();
         //segundo ?
-        obj[1] = cli.getCpf();
+        obj[1] = liv.getCategoria();
         jdbc.update(sql, obj);
     }
 
-    public List<Map<String, Object>> listarClientes() {
-    	String sql = "SELECT * FROM cliente";
+    public List<Map<String, Object>> listarLivro() {
+    	String sql = "SELECT * FROM livro";
     	return jdbc.queryForList(sql);
     }
-
 
 }

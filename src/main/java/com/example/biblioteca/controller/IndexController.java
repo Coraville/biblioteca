@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.biblioteca.model.Cliente;
-import com.example.biblioteca.model.ClienteService;
+import com.example.biblioteca.model.Livro;
+import com.example.biblioteca.model.LivroService;
 
 @Controller
 public class IndexController {
@@ -26,21 +26,21 @@ public class IndexController {
 
     @GetMapping("/cadastrar")
     public String cadastrar(Model model){
-        model.addAttribute("cliente", new Cliente());
+        model.addAttribute("livro", new Livro());
         return "cadastro";
     }
 
     @PostMapping("/cadastrar")
-    public String cadastrar(Model model, @ModelAttribute Cliente cli){
-        ClienteService cs = context.getBean(ClienteService.class);
-		cs.inserirCliente(cli);
+    public String cadastrar(Model model, @ModelAttribute Livro liv){
+        LivroService cs = context.getBean(LivroService.class);
+		cs.inserirLivro(liv);
         return "sucesso";
     }
 
     @GetMapping("/listar")
     public String listar(Model model){
-        ClienteService cs = context.getBean(ClienteService.class);
-        List<Map<String,Object>> lista = cs.listarClientes();
+        LivroService cs = context.getBean(LivroService.class);
+        List<Map<String,Object>> lista = cs.listarLivro();
         model.addAttribute("lista", lista);
         return "lista";
     }
