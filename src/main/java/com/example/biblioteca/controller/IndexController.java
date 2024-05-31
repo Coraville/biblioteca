@@ -24,13 +24,13 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/cadastrar")
+    @GetMapping("/cadastro")
     public String cadastrar(Model model){
         model.addAttribute("livro", new Livro());
-        return "cadastrar";
+        return "cadastro";
     }
 
-    @PostMapping("/cadastrar")
+    @PostMapping("/cadastro")
     public String cadastrar(Model model, @ModelAttribute Livro liv){
         LivroService cs = context.getBean(LivroService.class);
 		cs.inserirLivro(liv);
