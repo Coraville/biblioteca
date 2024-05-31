@@ -27,7 +27,7 @@ public class IndexController {
     @GetMapping("/cadastrar")
     public String cadastrar(Model model){
         model.addAttribute("livro", new Livro());
-        return "cadastro";
+        return "cadastrar";
     }
 
     @PostMapping("/cadastrar")
