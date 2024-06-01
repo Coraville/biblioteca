@@ -26,15 +26,17 @@
         th {
             background-color: #f2f2f2;
         }
-        .home-button {
+        .button {
             background-color: #fff;
             color: #9B4819;
-            border: white;
+            border: 2px solid #9B4819;
             padding: 10px 20px;
             cursor: pointer;
             font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
         }
-        .home-button:hover {
+        .button:hover {
             background-color: #9B4819;
             color: #fff;
         }
@@ -63,6 +65,8 @@
                 <th>ID</th>
                 <th>NOME DO LIVRO</th>
                 <th>CATEGORIA</th>
+                <th>EDITAR</th>
+                <th>APAGAR</th>
             </tr>
         </thead>
         <tbody>
@@ -70,21 +74,19 @@
                 <td th:text="${liv.id}"></td>
                 <td th:text="${liv.nome}"></td>
                 <td th:text="${liv.categoria}"></td>
-				<td>
-            		<a th:href="@{'atualizar/' + ${liv.id}}">
-            			Editar
-            		</a>
-            	</td>
-				<td>
-					<form action="#" th:action="@{'deletar/' + ${liv.id}}" method="post">
-						<input type="submit" value="Apagar">
-					</form>
-				</td>
+                <td>
+                    <a th:href="@{'atualizar/' + ${liv.id}}" class="button">Editar</a>
+                </td>
+                <td>
+                    <form action="#" th:action="@{'deletar/' + ${liv.id}}" method="post">
+                        <input type="submit" value="Apagar" class="button">
+                    </form>
+                </td>
             </tr>
         </tbody>
     </table>
     <footer>
-        <button class="home-button" onclick="window.location.href='https://bibliotecaonline.onrender.com/'">HOME</button>
+        <button class="button" onclick="window.location.href='https://bibliotecaonline.onrender.com/'">HOME</button>
     </footer>
 </body>
 </html>
