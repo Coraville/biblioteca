@@ -70,6 +70,16 @@
                 <td th:text="${liv.id}"></td>
                 <td th:text="${liv.nome}"></td>
                 <td th:text="${liv.categoria}"></td>
+				<td>
+            		<a th:href="@{'atualizar/' + ${liv.id}}">
+            			Editar
+            		</a>
+            	</td>
+				<td>
+					<form action="#" th:action="@{'deletar/' + ${liv.id}}" method="post">
+						<input type="submit" value="Apagar">
+					</form>
+				</td>
             </tr>
         </tbody>
     </table>

@@ -38,4 +38,28 @@ public class LivroDAO {
     	return jdbc.queryForList(sql);
     }
 
+    public List<Map<String,Object>> obterLivro(int id){
+		String sql = "SELECT * FROM livro where id = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		return jdbc.queryForList(sql, obj);
+	}
+
+	public void atualizarLivro(int id, Livro liv){
+		String sql = "UPDATE livro SET nome = ?," + 
+		             "categoria = ? WHERE id = ?";
+		Object[] obj = new Object[3];
+		obj[0] = liv.getNome();
+		obj[1] = liv.getCategoria();
+		obj[2] = id;
+		jdbc.update(sql, obj);
+	}
+
+	public void apagarLivro(int id){
+		String sql = "DELETE FROM livro WHERE id = ?";
+		Object[] obj = new Object[1];
+		obj[0] = id;
+		jdbc.update(sql, obj);
+	}
+
 }

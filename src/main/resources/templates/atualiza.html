@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Atualizacao de livro</title>
+</head>
+<body>
+    <form action="#" th:action="@{'/atualizar/' + ${id}}" method=post th:object="${livro}">
+    	NOME: <input type="text" th:field="*{nome}"><br>
+    	CATEGORIA: <input type="text" th:field="*{categoria}">
+    	<input type="submit" value="Editar">
+    </form>
+</body>
+</html>

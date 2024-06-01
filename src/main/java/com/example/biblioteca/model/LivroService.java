@@ -18,5 +18,16 @@ public class LivroService {
     public List<Map<String, Object>> listarLivro(){
         return cdao.listarLivro();
     }
+    public void atualizarLivro(int id, Livro liv){
+		cdao.atualizarLivro(id, liv);
+	}
+
+	public List<Map<String, Object>> obterLivro(int id){
+		return cdao.obterLivro(id);
+	}
+
+	public void apagarLivro(int id){
+		cdao.apagarLivro(id);
+	}
 
 }
