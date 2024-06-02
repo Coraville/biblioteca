@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 public class LivroService {
     
     @Autowired LivroDAO cdao;
-
     public void inserirLivro(Livro liv){
         cdao.inserirLivro(liv);
     }
