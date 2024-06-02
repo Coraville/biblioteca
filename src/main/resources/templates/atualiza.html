@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>Atualizacao de livro</title>
+    <title>Atualizar</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+		header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        header img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        form label {
+            font-weight: bold;
+        }
+
+        form input[type="text"] {
+            margin-bottom: 100px;
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 <body>
+	<div style="position: relative; width: 100%; height: 0; padding-top: 33.3333%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+  <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGG_6HH42E&#x2F;MjRyPHnVUBmULJNAbEmcTg&#x2F;watch?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+</div>
+<a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGG_6HH42E&#x2F;MjRyPHnVUBmULJNAbEmcTg&#x2F;watch?utm_content=DAGG_6HH42E&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
+    <div class="container">
     <form action="#" th:action="@{'/atualizar/' + ${id}}" method=post th:object="${livro}">
-    	NOME: <input type="text" th:field="*{nome}"><br>
-    	CATEGORIA: <input type="text" th:field="*{categoria}">
+		<label for="nome"><strong>NOME:</strong></label>
+		<input type="text" id="nome" th:field="*{nome}">
+		<label for="categoria"><strong>CATEGORIA:</strong></label>
+		<input type="text" id="categoria" th:field="*{categoria}">
     	<input type="submit" value="Editar">
     </form>
+</div>
 </body>
 </html>
